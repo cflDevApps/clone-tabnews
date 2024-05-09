@@ -11,14 +11,6 @@ async function query(queryObject) {
       process.env.NODE_ENV === "development" ? false : process.env.POSTGRES_SSL,
   });
 
-  console.log("Postgres connections variables: ", {
-    host: process.env.POSTGRES_HOST,
-    port: process.env.POSTGRES_PORT,
-    user: process.env.POSTGRES_USER,
-    database: process.env.POSTGRES_DB,
-    ssl: process.env.POSTGRES_SSL,
-  });
-
   try {
     await client.connect();
     const result = await client.query(queryObject);
