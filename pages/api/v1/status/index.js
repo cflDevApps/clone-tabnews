@@ -24,6 +24,7 @@ async function status(request, response) {
       db_version: dbVersion,
       max_connections: parseInt(maxConnections),
       active_connections: activeConnections,
+      db_name: process.env.POSTGRES_DB,
     },
   });
 }
